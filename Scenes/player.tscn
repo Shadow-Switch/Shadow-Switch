@@ -5,3 +5,6 @@
 [node name="Player" type="CharacterBody2D" unique_id=523157469]
 script = ExtResource("1_v0iea")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=809412813]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=920281177]
