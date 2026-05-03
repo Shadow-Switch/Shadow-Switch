@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://cpk6plcbaawl0"]
 
-[ext_resource type="Script" uid="uid://8wir8tl7xgtw" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://8wir8tl7xgtw" path="res://scripts/Player.gd" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://bcp7btldecbua" path="res://assets/images/player.png" id="2_kyqiw"]
 
 [node name="Player" type="CharacterBody2D" unique_id=523157469]
-script = ExtResource("1_v0iea")
+script = ExtResource("1_rpqav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=809412813]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=920281177]
+texture = ExtResource("2_kyqiw")
