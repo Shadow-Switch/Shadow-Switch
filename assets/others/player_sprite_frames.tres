@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dai5bexj7tifl"]
+
+[ext_resource type="Texture2D" uid="uid://bcp7btldecbua" path="res://assets/images/player.png" id="1_18xay"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dur7k"]
+atlas = ExtResource("1_18xay")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krfho"]
+atlas = ExtResource("1_18xay")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mwuo"]
+atlas = ExtResource("1_18xay")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wye2s"]
+atlas = ExtResource("1_18xay")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypsoi"]
+atlas = ExtResource("1_18xay")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pha8l"]
+atlas = ExtResource("1_18xay")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqkby"]
+atlas = ExtResource("1_18xay")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eriiv"]
+atlas = ExtResource("1_18xay")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82y7j"]
+atlas = ExtResource("1_18xay")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dur7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krfho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mwuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wye2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypsoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pha8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqkby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eriiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82y7j")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]

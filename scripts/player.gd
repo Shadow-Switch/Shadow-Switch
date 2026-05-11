@@ -16,20 +16,25 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 
 	# 점프
-	if (Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_accept")) and is_on_floor():
+	if (Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("ui_accept")) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# 차원 전환
-	if Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_just_pressed("switch_dimension"):
 		Global.dimension = 1 - Global.dimension
 		emit_signal("dimension_changed")
 
 	# 이동
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = 0
+	
+	# 프레임 전환
+	var sx = sign(velocity.x)
+	var sy = sign(velocity.y)
+	$Sprite2D.frame = (sy + 1) * 3 + (sx + 1)
 
 	position = position.round()
 	move_and_slide()
