@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpk6plcbaawl0"]
 
-[ext_resource type="Script" uid="uid://8wir8tl7xgtw" path="res://scripts/player.gd" id="1_rpqav"]
+[ext_resource type="Script" uid="uid://8wir8tl7xgtw" path="res://player.gd" id="1_rpqav"]
 [ext_resource type="Texture2D" uid="uid://bcp7btldecbua" path="res://assets/images/player.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
@@ -17,3 +17,4 @@ texture = ExtResource("2_kyqiw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=485226368]
 position_smoothing_enabled = true
+rotation_smoothing_enabled = true
