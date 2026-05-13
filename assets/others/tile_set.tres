@@ -1,12 +1,31 @@
 [gd_resource type="TileSet" format=3 uid="uid://ca2vu0irk1js2"]
 
 [ext_resource type="Texture2D" uid="uid://bcp7btldecbua" path="res://assets/images/player.png" id="1_lp71x"]
+[ext_resource type="Texture2D" uid="uid://djftjlotywm1" path="res://assets/images/New Piskel.png" id="2_fbn2m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3ltn"]
 texture = ExtResource("1_lp71x")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2eoi3"]
+texture = ExtResource("2_fbn2m")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_x3ltn")
+sources/3 = SubResource("TileSetAtlasSource_2eoi3")
