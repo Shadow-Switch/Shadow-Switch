@@ -252,10 +252,10 @@ func trigger_actions() -> void:
 		Input.action_release(action_left)
 		Input.action_press(action_right, direction.x)
 	
-	if direction.y < 0.0:
+	if direction.y < -0.7:
 		Input.action_release(action_down)
 		Input.action_press(action_up, -direction.y)
-	elif direction.y > 0.0:
+	elif direction.y > 0.7:
 		Input.action_release(action_up)
 		Input.action_press(action_down, direction.y)
 
