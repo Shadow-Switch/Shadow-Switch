@@ -209,8 +209,6 @@ func release_knob(index : int) -> void:
 
 ## Called when the joystick is dragged
 func on_screen_drag(event : InputEventScreenDrag) -> void:
-	var center := size / 2.0
-	
 	if event.index == event_index and is_pressing:
 		move_knob(event.position)
 		get_viewport().set_input_as_handled()
