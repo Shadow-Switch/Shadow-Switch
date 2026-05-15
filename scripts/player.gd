@@ -16,7 +16,7 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 
 	# 점프
-	if (Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("ui_accept")) and is_on_floor():
+	if (Input.is_action_pressed("jump") or Input.is_action_just_pressed("ui_accept")) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# 차원 전환
@@ -32,9 +32,7 @@ func _physics_process(delta):
 		velocity.x = 0
 	
 	# 프레임 전환
-	var sx = sign(velocity.x)
-	var sy = sign(velocity.y)
-	$Sprite2D.frame = (sy + 1) * 3 + (sx + 1)
+	$Sprite2D.frame = (sign(velocity.y) + 1) * 3 + (sign(velocity.x) + 1)
 
 	position = position.round()
 	move_and_slide()
