@@ -248,6 +248,9 @@ func trigger_actions() -> void:
 	elif direction.x > deadzone:
 		Input.action_release(action_left)
 		Input.action_press(action_right, direction.x)
+	else:
+		Input.action_release(action_left)
+		Input.action_release(action_right)
 	
 	if direction.y < -deadzone:
 		Input.action_release(action_down)
@@ -255,6 +258,10 @@ func trigger_actions() -> void:
 	elif direction.y > deadzone:
 		Input.action_release(action_up)
 		Input.action_press(action_down, direction.y)
+	else:
+		Input.action_release(action_up)
+		Input.action_release(action_down)
+
 
 
 ## Resets all the input actions
