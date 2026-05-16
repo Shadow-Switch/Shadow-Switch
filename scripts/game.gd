@@ -5,6 +5,12 @@ func _ready():
 	load_level("res://scenes/levels/1.tscn")
 	$Player.dimension_changed.connect(apply_dimension)
 
+func _process(delta):
+	if DisplayServer.is_touchscreen_available():
+		$CanvasLayer/TouchScreenJoystick.visible = true
+	else:
+		$CanvasLayer/TouchScreenJoystick.visible = false
+
 func apply_dimension():
 	# 에러처리
 	if Global.current_level == null:
