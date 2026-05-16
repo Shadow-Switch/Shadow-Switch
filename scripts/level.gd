@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var Real_Layer = $RealLayer
-@onready var Shadow_Layer = $ShadowLayer
+@onready var RealLayer = $RealLayer
+@onready var ShadowLayer = $ShadowLayer
 
 
 func _ready():

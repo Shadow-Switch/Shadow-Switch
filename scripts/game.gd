@@ -5,7 +5,7 @@ func _ready():
 	load_level("res://scenes/levels/1.tscn")
 	$Player.dimension_changed.connect(apply_dimension)
 
-func _process(delta):
+func _process(_delta):
 	if DisplayServer.is_touchscreen_available():
 		$CanvasLayer/TouchScreenJoystick.visible = true
 	else:
@@ -17,15 +17,15 @@ func apply_dimension():
 		return
 	# 레이어 보이기 변경
 	if Global.dimension == 0:
-		Global.current_level.Real_Layer.visible = true
-		Global.current_level.Shadow_Layer.visible = false
-		Global.current_level.Real_Layer.set_collision_enabled(true)
-		Global.current_level.Shadow_Layer.set_collision_enabled(false)
+		Global.current_level.RealLayer.visible = true
+		Global.current_level.ShadowLayer.visible = false
+		Global.current_level.RealLayer.set_collision_enabled(true)
+		Global.current_level.ShadowLayer.set_collision_enabled(false)
 	else:
-		Global.current_level.Real_Layer.visible = false
-		Global.current_level.Shadow_Layer.visible = true
-		Global.current_level.Real_Layer.set_collision_enabled(false)
-		Global.current_level.Shadow_Layer.set_collision_enabled(true)
+		Global.current_level.RealLayer.visible = false
+		Global.current_level.ShadowLayer.visible = true
+		Global.current_level.RealLayer.set_collision_enabled(false)
+		Global.current_level.ShadowLayer.set_collision_enabled(true)
 
 func load_level(path):
 	# 레벨 씬 변경
