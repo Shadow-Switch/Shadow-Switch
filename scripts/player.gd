@@ -32,7 +32,7 @@ func _physics_process(delta):
 		velocity.x = 0
 	
 	# 프레임 전환
-	$Sprite2D.frame = (sign(velocity.y) + 1) * 3 + (sign(velocity.x) + 1)
+	$Sprite2D.frame = (sign(int(velocity.y)) + 1) * 3 + (sign(int(velocity.x)) + 1)
 
 	position = position.round()
 	move_and_slide()
