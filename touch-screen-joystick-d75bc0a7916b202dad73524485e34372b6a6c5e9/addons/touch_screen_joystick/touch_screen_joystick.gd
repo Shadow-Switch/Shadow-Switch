@@ -209,6 +209,9 @@ func release_knob(index : int) -> void:
 
 ## Called when the joystick is dragged
 func on_screen_drag(event : InputEventScreenDrag) -> void:
+	var center := size / 2.0
+	var dist := center.distance_to(knob_position)
+	
 	if event.index == event_index and is_pressing:
 		move_knob(event.position)
 		get_viewport().set_input_as_handled()
@@ -228,7 +231,10 @@ func move_knob(event_pos : Vector2) -> void:
 		knob_position.x = center.x + cos(angle) * base_radius
 		knob_position.y = center.y + sin(angle) * base_radius
 	
-	trigger_actions()
+	if distance > deadzone:
+		trigger_actions()
+	else:
+		reset_actions()
 	
 	queue_redraw()
 
@@ -239,26 +245,19 @@ func trigger_actions() -> void:
 	
 	var direction := get_direction().normalized()
 	
-	if direction.x < -deadzone:
+	if direction.x < 0.0:
 		Input.action_release(action_right)
 		Input.action_press(action_left, -direction.x)
-	elif direction.x > deadzone:
+	elif direction.x > 0.0:
 		Input.action_release(action_left)
 		Input.action_press(action_right, direction.x)
-	else:
-		Input.action_release(action_left)
-		Input.action_release(action_right)
 	
-	if direction.y < -deadzone:
+	if direction.y < -0.7:
 		Input.action_release(action_down)
 		Input.action_press(action_up, -direction.y)
-	elif direction.y > deadzone:
+	elif direction.y > 0.7:
 		Input.action_release(action_up)
 		Input.action_press(action_down, direction.y)
-	else:
-		Input.action_release(action_up)
-		Input.action_release(action_down)
-
 
 
 ## Resets all the input actions
