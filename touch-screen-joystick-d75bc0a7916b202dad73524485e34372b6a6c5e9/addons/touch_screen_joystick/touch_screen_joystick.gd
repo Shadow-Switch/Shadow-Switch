@@ -228,10 +228,7 @@ func move_knob(event_pos : Vector2) -> void:
 		knob_position.x = center.x + cos(angle) * base_radius
 		knob_position.y = center.y + sin(angle) * base_radius
 	
-	if distance > deadzone:
-		trigger_actions()
-	else:
-		reset_actions()
+	trigger_actions()
 	
 	queue_redraw()
 
