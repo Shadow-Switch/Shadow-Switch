@@ -191,7 +191,7 @@ func on_screen_touch(event : InputEventScreenTouch) -> void:
 ## moves the knob to the current touch position
 func touch_knob(pos : Vector2, index : int) -> void:
 	if index == event_index: 
-		move_knob(pos)
+		move_knob()
 		is_pressing = true
 		on_press.emit()
 		get_viewport().set_input_as_handled()
@@ -216,20 +216,8 @@ func on_screen_drag(event : InputEventScreenDrag) -> void:
 
 
 ## Moves the knob position relative to the current touch position
-func move_knob(event_pos : Vector2) -> void:
-	var center := size / 2.0
-	var touch_pos := (event_pos - global_position) / scale
-	var distance := touch_pos.distance_to(center)
-	var angle := center.angle_to_point(touch_pos)
-	
-	if distance < base_radius:
-		knob_position = touch_pos
-	else:
-		knob_position.x = center.x + cos(angle) * base_radius
-		knob_position.y = center.y + sin(angle) * base_radius
-	
-	if distance > deadzone:
-		trigger_actions()
+func move_knob() -> void:
+	trigger_actions()
 	
 	queue_redraw()
 
