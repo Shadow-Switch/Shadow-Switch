@@ -12,20 +12,24 @@ func _process(_delta):
 		$CanvasLayer/TouchScreenJoystick.visible = false
 
 func apply_dimension():
-	# 에러처리
 	if Global.current_level == null:
 		return
-	# 레이어 보이기 변경
+	var real = Global.current_level.RealLayer
+	var shadow = Global.current_level.ShadowLayer
 	if Global.dimension == 0:
-		Global.current_level.RealLayer.visible = true
-		Global.current_level.ShadowLayer.visible = false
-		Global.current_level.RealLayer.set_collision_enabled(true)
-		Global.current_level.ShadowLayer.set_collision_enabled(false)
+		real.visible = true
+		shadow.visible = false
+		real.set_collision_enabled(true)
+		shadow.set_collision_enabled(false)
+		real.get_node("Spike").set_collision_enabled(true)
+		shadow.get_node("Spike").set_collision_enabled(false)
 	else:
-		Global.current_level.RealLayer.visible = false
-		Global.current_level.ShadowLayer.visible = true
-		Global.current_level.RealLayer.set_collision_enabled(false)
-		Global.current_level.ShadowLayer.set_collision_enabled(true)
+		real.visible = false
+		shadow.visible = true
+		real.set_collision_enabled(false)
+		shadow.set_collision_enabled(true)
+		real.get_node("Spike").set_collision_enabled(false)
+		shadow.get_node("Spike").set_collision_enabled(true)
 
 func load_level(path):
 	# 레벨 씬 변경
