@@ -200,6 +200,7 @@ func touch_knob(pos : Vector2, index : int) -> void:
 ## and resets then input actions
 func release_knob(index : int) -> void:
 	if index == event_index:
+		reset_actions()
 		reset_knob()
 		event_index = -1
 		is_pressing = false
@@ -257,6 +258,15 @@ func trigger_actions() -> void:
 	else:
 		Input.action_release(action_up)
 		Input.action_release(action_down)
+
+## Resets all the input actions
+func reset_actions() -> void:
+	Input.action_release(action_left)
+	Input.action_release(action_right)
+	Input.action_release(action_up)
+	Input.action_release(action_down)
+
+
 
 ## Returns a direction vector from the center of 
 ## the joystick to the knob position
