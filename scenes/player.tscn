@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dai5bexj7tifl" path="res://assets/others/player_sprite_frames.tres" id="2_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(15.9, 15.9)
+size = Vector2(15.5, 15.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=523157469]
 script = ExtResource("1_rpqav")
@@ -16,5 +16,3 @@ shape = SubResource("RectangleShape2D_g2els")
 sprite_frames = ExtResource("2_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=485226368]
-position_smoothing_speed = 20.0
-rotation_smoothing_enabled = true

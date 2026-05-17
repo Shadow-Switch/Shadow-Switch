@@ -1,28 +1,41 @@
 [gd_resource type="TileSet" format=3 uid="uid://ca2vu0irk1js2"]
 
-[ext_resource type="Texture2D" uid="uid://bcp7btldecbua" path="res://assets/images/player.png" id="1_lp71x"]
 [ext_resource type="Texture2D" uid="uid://djftjlotywm1" path="res://assets/images/tileset1.png" id="2_fbn2m"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lp71x"]
+load_path = "res://.godot/imported/player.png-ec09cb0aaea6691df1670eb512b00cb9.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3ltn"]
-texture = ExtResource("1_lp71x")
+texture = SubResource("CompressedTexture2D_lp71x")
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2eoi3"]
 texture = ExtResource("2_fbn2m")
