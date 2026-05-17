@@ -16,6 +16,5 @@ shape = SubResource("RectangleShape2D_g2els")
 sprite_frames = ExtResource("2_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=485226368]
-position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 rotation_smoothing_enabled = true

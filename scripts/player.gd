@@ -2,13 +2,16 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
-var last_floor = Vector2.ZERO
+var is_dead = false
+var safe_floor = Vector2.ZERO
 
 signal dimension_changed
 
 
 func _physics_process(delta):
-
+	#입력 막기
+	if is_dead:
+		return
 
 	# 중력
 	if not is_on_floor():
@@ -51,7 +54,7 @@ func _physics_process(delta):
 
 	# 바닥 위치 저장
 	if is_on_floor():
-		last_floor = snap_to_grid(global_position)
+		safe_floor = snap_to_grid(global_position)
 
 func notify_dimension():
 	emit_signal("change_dimension")
@@ -63,5 +66,13 @@ func snap_to_grid(pos: Vector2) -> Vector2:
 	)
 
 func die():
-	global_position = last_floor
+	var last_floor = safe_floor
+	if is_dead:
+		return
+	is_dead = true
 	velocity = Vector2.ZERO
+	$Sprite2D.visible = false
+	await get_tree().create_timer(0.2).timeout
+	global_position = last_floor
+	is_dead = false
+	$Sprite2D.visible = true
