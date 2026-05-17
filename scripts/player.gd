@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 100.0
+const JUMP_VELOCITY = -300.0
 var is_dead = false
-var safe_floor = Vector2.ZERO
+var last_floor = Vector2.ZERO
 
 signal dimension_changed
 
@@ -34,7 +34,8 @@ func _physics_process(delta):
 		velocity.x = 0
 
 	# 프레임 전환
-	$Sprite2D.frame = (sign(int(velocity.y)) + 1) * 3 + (sign(int(velocity.x)) + 1)
+	$Sprite2D.frame = (sign(
+		int(velocity.y)) + 1) * 3 + (sign(int(velocity.x)) + 1)
 
 	# 적용
 	position = position.round()
@@ -44,17 +45,15 @@ func _physics_process(delta):
 	var current_layer = Global.current_level.RealLayer
 	if Global.dimension == 1:
 		current_layer = Global.current_level.ShadowLayer
-
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
-
 		if collider.name == "Spike" and collider.get_parent() == current_layer:
 			die()
 
 	# 바닥 위치 저장
 	if is_on_floor():
-		safe_floor = snap_to_grid(global_position)
+		last_floor = snap_to_grid(global_position)
 
 func notify_dimension():
 	emit_signal("change_dimension")
@@ -66,13 +65,48 @@ func snap_to_grid(pos: Vector2) -> Vector2:
 	)
 
 func die():
-	var last_floor = safe_floor
+	# 현재 위치 저장 및 죽었는지 확인
+	var safe_floor = last_floor
 	if is_dead:
 		return
 	is_dead = true
 	velocity = Vector2.ZERO
+
+	# 효과
+	screen_shake(0.2, 5)
+	await play_die_animation()
+
+	# 기다리기
 	$Sprite2D.visible = false
-	await get_tree().create_timer(0.2).timeout
-	global_position = last_floor
+	$Sprite2D.frame = 0
+	await get_tree().create_timer(0.5).timeout
+
+	# 리스폰
+	global_position = safe_floor
 	is_dead = false
 	$Sprite2D.visible = true
+
+func play_die_animation():
+	var start = 10
+	var end = 28
+	var fps = 150.0
+	var delay = 1.0 / fps
+
+	for i in range(start, end + 1):
+		$Sprite2D.frame = i
+		await get_tree().create_timer(delay).timeout
+
+func screen_shake(duration := 0.2, strength := 1):
+	var camera = $Camera2D
+	var original_pos = camera.position
+	var time = 0.0
+
+	while time < duration:
+		camera.position = original_pos + Vector2(
+			randi_range(-strength, strength),
+			randi_range(-strength, strength)
+		)
+		await get_tree().process_frame
+		time += get_process_delta_time()
+
+	camera.position = original_pos
