@@ -9,6 +9,11 @@ signal dimension_changed
 
 
 func _physics_process(delta):
+	# 차원 전환
+	if Input.is_action_just_pressed("switch_dimension"):
+		Global.dimension = 1 - Global.dimension
+		emit_signal("dimension_changed")
+
 	#입력 막기
 	if is_dead:
 		return
@@ -20,11 +25,6 @@ func _physics_process(delta):
 	# 점프
 	if (Input.is_action_pressed("jump") or Input.is_action_just_pressed("ui_accept")) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
-	# 차원 전환
-	if Input.is_action_just_pressed("switch_dimension"):
-		Global.dimension = 1 - Global.dimension
-		emit_signal("dimension_changed")
 
 	# 이동
 	var direction := Input.get_axis("move_left", "move_right")
