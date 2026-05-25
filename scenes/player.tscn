@@ -16,3 +16,6 @@ shape = SubResource("RectangleShape2D_g2els")
 sprite_frames = ExtResource("2_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=485226368]
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1312975015]
+target_position = Vector2(0, 16)
