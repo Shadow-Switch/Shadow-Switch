@@ -42,3 +42,17 @@ metadata/_custom_type_script = "uid://bxed2wxh288sw"
 stream = ExtResource("4_lbhrr")
 autoplay = true
 parameters/looping = true
+
+[node name="AcceptDialog" type="AcceptDialog" parent="." unique_id=386839879]
+gui_disable_input = true
+oversampling_override = 1.0
+mode = 3
+title = "Error"
+initial_position = 2
+size = Vector2i(404, 184)
+visible = true
+dialog_text = "ERROR: Failed to remove 
+level_07
+(이 메시지는 무시해도
+게임 진행에는 문제가
+없습니다)"

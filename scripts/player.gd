@@ -34,8 +34,7 @@ func _physics_process(delta):
 		velocity.x = 0
 
 	# 프레임 전환
-	$Sprite2D.frame = (sign(
-		int(velocity.y)) + 1) * 3 + (sign(int(velocity.x)) + 1)
+	$Sprite2D.frame = (sign(int(velocity.y)) + 1)* 3 + (sign(int(velocity.x)) + 1)
 
 	# 적용
 	position = position.round()
@@ -52,7 +51,7 @@ func _physics_process(delta):
 			die()
 
 	# 바닥 위치 저장
-	if is_on_floor():
+	if is_on_floor() and $RayCast2D.is_colliding():
 		last_floor = snap_to_grid(global_position)
 
 func notify_dimension():
@@ -73,7 +72,7 @@ func die():
 	velocity = Vector2.ZERO
 
 	# 효과
-	screen_shake(0.2, 5)
+	screen_shake(0.2, 1)
 	await play_die_animation()
 
 	# 기다리기
