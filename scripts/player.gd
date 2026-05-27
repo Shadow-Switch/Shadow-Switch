@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -350.0
 var is_dead = false
-var last_floor = Vector2.ZERO
+var last_floor = Vector2(8, 8)
 
 signal dimension_changed
 

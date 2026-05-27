@@ -40,6 +40,7 @@ func load_level(path):
 	Global.current_level = level
 	# 차원 Real로 변경
 	Global.dimension = 0
+	$Player.position = Vector2(8, 8)
 	for exit in level.get_tree().get_nodes_in_group("exit"):
 		exit.connect("entered_exit", load_level)
 	apply_dimension()
