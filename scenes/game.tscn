@@ -49,5 +49,5 @@ initial_position = 2
 size = Vector2i(578, 200)
 visible = true
 ok_button_text = "Close"
-dialog_text = "error: failed to remove level_07
-(If you ignore this message, there is no problem with the game going on)"
+dialog_text = "Error: Failed to remove {level_07}
+( There is no problem playing the game if you ignore this message. )"
