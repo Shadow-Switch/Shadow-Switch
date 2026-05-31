@@ -2,22 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://djftjlotywm1" path="res://assets/images/tileset1.png" id="1_1wpgs"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_duxfx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wpgs"]
 atlas = ExtResource("1_1wpgs")
-region = Rect2(16, 48, 16, 16)
+region = Rect2(48, 64, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i7eqy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e3ye"]
 atlas = ExtResource("1_1wpgs")
-region = Rect2(0, 48, 16, 16)
+region = Rect2(32, 64, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_duxfx")
+"texture": SubResource("AtlasTexture_1wpgs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i7eqy")
+"texture": SubResource("AtlasTexture_7e3ye")
 }],
 "loop": false,
 "name": &"default",
