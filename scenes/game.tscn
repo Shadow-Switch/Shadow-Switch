@@ -46,9 +46,9 @@ parameters/looping = true
 [node name="AcceptDialog" type="AcceptDialog" parent="." unique_id=344836563]
 oversampling_override = 1.0
 title = "Error"
-initial_position = 1
-size = Vector2i(256, 106)
+initial_position = 2
+size = Vector2i(578, 200)
 visible = true
 ok_button_text = "Close"
-dialog_text = "ERROR: Failed to remove
-level_07"
+dialog_text = "error: failed to remove level_07
+(If you ignore this message, there is no problem with the game going on)"
