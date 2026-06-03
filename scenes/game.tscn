@@ -39,6 +39,7 @@ metadata/_custom_type_script = "uid://bxed2wxh288sw"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1648953139]
 stream = ExtResource("4_lbhrr")
+volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
