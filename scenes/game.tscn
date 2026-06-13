@@ -14,6 +14,14 @@ position = Vector2(8, 8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1884144013]
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1346394329]
+material = ExtResource("4_iywne")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="TouchScreenJoystick" type="Control" parent="CanvasLayer" unique_id=801613196]
 layout_mode = 3
 anchors_preset = 3
@@ -37,14 +45,6 @@ action_right = &"move_right"
 action_up = &"jump"
 action_down = &"switch_dimension"
 metadata/_custom_type_script = "uid://bxed2wxh288sw"
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1346394329]
-material = ExtResource("4_iywne")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1648953139]
 stream = ExtResource("4_lbhrr")
