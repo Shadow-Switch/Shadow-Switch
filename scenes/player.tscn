@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8wir8tl7xgtw" path="res://scripts/player.gd" id="1_rpqav"]
 [ext_resource type="SpriteFrames" uid="uid://dai5bexj7tifl" path="res://assets/others/player_sprite_frames.tres" id="2_g2els"]
+[ext_resource type="AudioStream" uid="uid://2ajqe4x7ikbi" path="res://assets/sounds/change.wav" id="3_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(15.5, 15.5)
@@ -24,3 +25,6 @@ target_position = Vector2(0, 16)
 [node name="RayCast2DRight" type="RayCast2D" parent="." unique_id=332086412]
 position = Vector2(4, 0)
 target_position = Vector2(0, 16)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1540972956]
+stream = ExtResource("3_qhqgy")

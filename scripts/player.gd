@@ -14,6 +14,7 @@ func _physics_process(delta):
 		Global.dimension = 1 - Global.dimension
 		emit_signal("dimension_changed")
 		screen_shake(0.05, 1)
+		$AudioStreamPlayer.playing = true
 
 	#입력 막기
 	if is_dead:
@@ -51,9 +52,6 @@ func _physics_process(delta):
 			die()
 			return
 
-	# 바닥 위치 저장
-	position = position.round()
-
 	# 바닥 위치 저장 (좌/우 레이캐스트 모두 체크)
 	if is_on_floor() and $RayCast2DLeft.is_colliding() and $RayCast2DRight.is_colliding():
 		var left_collider = $RayCast2DLeft.get_collider()
@@ -63,9 +61,6 @@ func _physics_process(delta):
 
 	# 픽셀에 스냅
 	position = position.round()
-
-func notify_dimension():
-	emit_signal("change_dimension")
 
 func snap_to_grid(pos: Vector2) -> Vector2:
 	return Vector2(
