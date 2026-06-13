@@ -1,6 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://ca2vu0irk1js2"]
 
 [ext_resource type="Texture2D" uid="uid://bmq52kp6l53wq" path="res://assets/images/clouds.png" id="1_fbn2m"]
+[ext_resource type="Texture2D" uid="uid://b7yvc8o42pvl8" path="res://assets/images/guide.png" id="2_2eoi3"]
 [ext_resource type="Texture2D" uid="uid://djftjlotywm1" path="res://assets/images/tileset1.png" id="2_fbn2m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mm2a7"]
@@ -72,6 +73,14 @@ texture = ExtResource("1_fbn2m")
 1:4/0/terrains_peering_bit/bottom_right_corner = 0
 1:4/0/terrains_peering_bit/bottom_left_corner = 0
 1:4/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5wdj"]
+texture = ExtResource("2_2eoi3")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lp71x"]
 load_path = "res://.godot/imported/player.png-ec09cb0aaea6691df1670eb512b00cb9.ctex"
@@ -157,3 +166,4 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/2 = SubResource("TileSetAtlasSource_x3ltn")
 sources/3 = SubResource("TileSetAtlasSource_2eoi3")
 sources/0 = SubResource("TileSetAtlasSource_mm2a7")
+sources/1 = SubResource("TileSetAtlasSource_r5wdj")
