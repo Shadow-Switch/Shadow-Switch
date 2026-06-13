@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://blus7j0gava6p"]
+
+[ext_resource type="Shader" uid="uid://b845dvo6jfryv" path="res://assets/others/shadow_shader_material.gdshader" id="1_6hdi3"]
+
+[resource]
+shader = ExtResource("1_6hdi3")
+shader_parameter/pixel_size = Vector2(320, 180)

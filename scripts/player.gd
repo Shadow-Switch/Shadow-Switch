@@ -13,6 +13,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("switch_dimension"):
 		Global.dimension = 1 - Global.dimension
 		emit_signal("dimension_changed")
+		screen_shake(0.05, 1)
 
 	#입력 막기
 	if is_dead:
@@ -33,12 +34,11 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0
 
+	# 적용
+	move_and_slide()
+
 	# 프레임 전환
 	$Sprite2D.frame = (sign(int(velocity.y)) + 1)* 3 + (sign(int(velocity.x)) + 1)
-
-	# 적용
-	position = position.round()
-	move_and_slide()
 
 	# 가시 체크
 	var current_layer = Global.current_level.RealLayer
@@ -49,10 +49,20 @@ func _physics_process(delta):
 		var collider = collision.get_collider()
 		if collider.name == "Spike" and collider.get_parent() == current_layer:
 			die()
+			return
 
 	# 바닥 위치 저장
-	if is_on_floor() and $RayCast2D.is_colliding():
-		last_floor = snap_to_grid(global_position)
+	position = position.round()
+
+	# 바닥 위치 저장 (좌/우 레이캐스트 모두 체크)
+	if is_on_floor() and $RayCast2DLeft.is_colliding() and $RayCast2DRight.is_colliding():
+		var left_collider = $RayCast2DLeft.get_collider()
+		var right_collider = $RayCast2DRight.get_collider()
+		if (left_collider and not "Spike" == left_collider.name) and (right_collider and not "Spike" == right_collider.name):
+			last_floor = snap_to_grid(global_position)
+
+	# 픽셀에 스냅
+	position = position.round()
 
 func notify_dimension():
 	emit_signal("change_dimension")
@@ -64,7 +74,7 @@ func snap_to_grid(pos: Vector2) -> Vector2:
 	)
 
 func die():
-	# 현재 위치 저장 및 죽었는지 확인
+	# 안전한 위치 저장 및 죽었는지 확인
 	var safe_floor = last_floor
 	if is_dead:
 		return
