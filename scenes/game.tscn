@@ -16,11 +16,8 @@ position = Vector2(8, 8)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1346394329]
 material = ExtResource("4_iywne")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 320.0
+offset_bottom = 180.0
 
 [node name="TouchScreenJoystick" type="Control" parent="CanvasLayer" unique_id=801613196]
 layout_mode = 3
