@@ -14,9 +14,9 @@ config/name="Shadow Switch"
 run/main_scene="uid://n78b0umtt64t"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
+config/icon="uid://ng1nyvbiw1g6"
 boot_splash/stretch_mode=0
 boot_splash/image="uid://ng1nyvbiw1g6"
-config/icon="uid://ng1nyvbiw1g6"
 
 [autoload]
 
