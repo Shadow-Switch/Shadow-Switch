@@ -43,6 +43,12 @@ action_up = &"jump"
 action_down = &"switch_dimension"
 metadata/_custom_type_script = "uid://bxed2wxh288sw"
 
+[node name="BackGroundColor" type="ColorRect" parent="CanvasLayer" unique_id=1692858609]
+z_index = -1
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.506, 0.749, 0.925, 1)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1648953139]
 stream = ExtResource("4_lbhrr")
 volume_db = -20.0

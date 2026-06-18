@@ -24,6 +24,7 @@ func apply_dimension():
 		real.get_node("Spike").set_collision_enabled(true)
 		shadow.get_node("Spike").set_collision_enabled(false)
 		$CanvasLayer/ColorRect.visible = false
+		$CanvasLayer/BackGroundColor.color = Color(0.506, 0.749, 0.925)
 	else:
 		real.visible = false
 		shadow.visible = true
@@ -32,6 +33,7 @@ func apply_dimension():
 		real.get_node("Spike").set_collision_enabled(false)
 		shadow.get_node("Spike").set_collision_enabled(true)
 		$CanvasLayer/ColorRect.visible = true
+		$CanvasLayer/BackGroundColor.color = Color(0.403, 0.0, 0.62, 1.0)
 
 func load_level(path):
 	# 레벨 씬 변경
