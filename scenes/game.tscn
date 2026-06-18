@@ -14,11 +14,6 @@ position = Vector2(8, 8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1884144013]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1346394329]
-material = ExtResource("4_iywne")
-offset_right = 320.0
-offset_bottom = 180.0
-
 [node name="TouchScreenJoystick" type="Control" parent="CanvasLayer" unique_id=801613196]
 layout_mode = 3
 anchors_preset = 3
@@ -43,8 +38,15 @@ action_up = &"jump"
 action_down = &"switch_dimension"
 metadata/_custom_type_script = "uid://bxed2wxh288sw"
 
-[node name="BackGroundColor" type="ColorRect" parent="CanvasLayer" unique_id=1692858609]
-z_index = -1
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1346394329]
+material = ExtResource("4_iywne")
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2046220483]
+layer = -1
+
+[node name="BackGroundColor" type="ColorRect" parent="CanvasLayer2" unique_id=1692858609]
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0.506, 0.749, 0.925, 1)
