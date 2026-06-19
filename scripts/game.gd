@@ -24,6 +24,7 @@ func apply_dimension():
 		real.get_node("Spike").set_collision_enabled(true)
 		shadow.get_node("Spike").set_collision_enabled(false)
 		$CanvasLayer2/BackGroundColor.color = Color(0.79, 0.79, 0.79, 1.0)
+		$AudioStreamPlayer.bus = &"Master"
 	else:
 		real.visible = false
 		shadow.visible = true
@@ -32,6 +33,7 @@ func apply_dimension():
 		real.get_node("Spike").set_collision_enabled(false)
 		shadow.get_node("Spike").set_collision_enabled(true)
 		$CanvasLayer2/BackGroundColor.color = Color(0.59, 0.59, 0.59, 1.0)
+		$AudioStreamPlayer.bus = &"Shadow"
 
 func load_level(path):
 	# 레벨 씬 변경
