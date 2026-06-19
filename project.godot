@@ -18,6 +18,10 @@ boot_splash/stretch_mode=0
 boot_splash/image="uid://ng1nyvbiw1g6"
 config/icon="uid://ng1nyvbiw1g6"
 
+[audio]
+
+buses/default_bus_layout="uid://dhv8ruscwxhru"
+
 [autoload]
 
 Global="*uid://cplfyrsqmgf30"
