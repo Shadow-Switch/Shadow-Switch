@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c8djemmwisqyv"]
+
+[ext_resource type="FontFile" uid="uid://b0exmavx4ca5w" path="res://assets/others/bm-kkubulim.otf" id="1_o5qli"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w487p"]
+font = ExtResource("1_o5qli")
+
+[node name="Main" type="CanvasLayer" unique_id=1232225580]
+
+[node name="Label" type="Label" parent="." unique_id=978489061]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Shadow Switch"
+label_settings = SubResource("LabelSettings_w487p")
