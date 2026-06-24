@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c8cxqhy1eeb7j" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cpk6plcbaawl0" path="res://scenes/player.tscn" id="1_yqjtg"]
-[ext_resource type="Script" uid="uid://bxed2wxh288sw" path="res://touch-screen-joystick-d75bc0a7916b202dad73524485e34372b6a6c5e9/addons/touch_screen_joystick/touch_screen_joystick.gd" id="3_lnu2h"]
 [ext_resource type="Material" uid="uid://blus7j0gava6p" path="res://assets/others/shadow_shader_material.tres" id="4_iywne"]
 [ext_resource type="AudioStream" uid="uid://dssjsc5rph25v" path="res://assets/sounds/between_two_worlds.ogg" id="4_lbhrr"]
 
@@ -14,34 +13,18 @@ position = Vector2(8, 8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1884144013]
 
-[node name="TouchScreenJoystick" type="Control" parent="CanvasLayer" unique_id=801613196]
-layout_mode = 3
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -60.0
-offset_top = -60.0
-offset_right = -20.0
-offset_bottom = -20.0
-grow_horizontal = 0
-grow_vertical = 0
-script = ExtResource("3_lnu2h")
-deadzone = 10.0
-base_radius = 30.0
-knob_radius = 10.0
-use_input_actions = true
-action_left = &"move_left"
-action_right = &"move_right"
-action_up = &"jump"
-action_down = &"switch_dimension"
-metadata/_custom_type_script = "uid://bxed2wxh288sw"
-
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1346394329]
 material = ExtResource("4_iywne")
 offset_right = 320.0
 offset_bottom = 180.0
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="CanvasLayer" unique_id=1038499707]
+offset_right = 40.0
+offset_bottom = 40.0
+action_left = &"move_left"
+action_right = &"move_right"
+action_up = &"jump"
+action_down = &"switch_dimension"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2046220483]
 layer = -1

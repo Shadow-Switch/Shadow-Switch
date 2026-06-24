@@ -7,9 +7,9 @@ func _ready():
 
 func _process(_delta):
 	if DisplayServer.is_touchscreen_available():
-		$CanvasLayer/TouchScreenJoystick.visible = true
+		$CanvasLayer/VirtualJoystick.visible = true
 	else:
-		$CanvasLayer/TouchScreenJoystick.visible = false
+		$CanvasLayer/VirtualJoystick.visible = false
 
 func apply_dimension():
 	if Global.current_level == null:
