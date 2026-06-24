@@ -32,7 +32,7 @@ layer = -1
 [node name="BackGroundColor" type="ColorRect" parent="CanvasLayer2" unique_id=1692858609]
 offset_right = 320.0
 offset_bottom = 180.0
-color = Color(0.506, 0.749, 0.925, 1)
+color = Color(0.7882353, 0.7882353, 0.7882353, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1648953139]
 stream = ExtResource("4_lbhrr")
