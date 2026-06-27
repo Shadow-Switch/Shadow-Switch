@@ -1,10 +1,14 @@
-[gd_scene format=3 uid="uid://c8djemmwisqyv"]
+[gd_scene format=4 uid="uid://c8djemmwisqyv"]
 
 [ext_resource type="FontFile" uid="uid://b0exmavx4ca5w" path="res://assets/others/bm-kkubulim.otf" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://djbay5kv3flrl" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="TileSet" uid="uid://ca2vu0irk1js2" path="res://assets/others/tile_set.tres" id="2_0wfyh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w487p"]
 font = ExtResource("1_o5qli")
 font_size = 23
+
+[sub_resource type="Theme" id="Theme_2pgb6"]
 
 [node name="Main" type="Control" unique_id=27101671]
 layout_mode = 3
@@ -13,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sugp2")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=66679813]
 layout_mode = 1
@@ -21,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.32024416, 0.32024416, 0.32024413, 1)
 
 [node name="Label" type="Label" parent="." unique_id=978489061]
 layout_mode = 1
@@ -35,3 +40,26 @@ offset_bottom = 63.635
 grow_horizontal = 2
 text = "Shadow Switch"
 label_settings = SubResource("LabelSettings_w487p")
+
+[node name="Button" type="Button" parent="." unique_id=1529415620]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -15.5
+offset_right = 20.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2pgb6")
+theme_override_fonts/font = ExtResource("1_o5qli")
+text = "Play"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1068689370]
+tile_map_data = PackedByteArray("AAAAAAkABAAAAAAAAAABAAkABAAAAAAAAAACAAkABAAAAAAAAAADAAkABAAAAAAAAAAEAAkABAAAAAAAAAAFAAkABAAAAAAAAAAGAAkABAAAAAAAAAAHAAkABAAAAAAAAAAIAAkABAAAAAAAAAAJAAkABAAAAAAAAAAKAAkABAAAAAAAAAALAAkABAAAAAAAAAAMAAkABAAAAAAAAAANAAkABAAAAAAAAAAOAAkABAAAAAAAAAAPAAkABAAAAAAAAAAQAAkABAAAAAAAAAARAAkABAAAAAAAAAASAAkABAAAAAAAAAATAAkABAAAAAAAAAAAAAoABAABAAAAAAAAAAsABAABAAAAAAABAAoABAABAAAAAAABAAsABAABAAAAAAACAAoABAABAAAAAAACAAsABAABAAAAAAADAAoABAABAAAAAAADAAsABAABAAAAAAAEAAoABAABAAAAAAAEAAsABAABAAAAAAAFAAoABAABAAAAAAAFAAsABAABAAAAAAAGAAoABAABAAAAAAAGAAsABAABAAAAAAAHAAoABAABAAAAAAAHAAsABAABAAAAAAAIAAoABAABAAAAAAAIAAsABAABAAAAAAAJAAoABAABAAAAAAAJAAsABAABAAAAAAAKAAoABAABAAAAAAAKAAsABAABAAAAAAALAAoABAABAAAAAAALAAsABAABAAAAAAAMAAoABAABAAAAAAAMAAsABAABAAAAAAANAAoABAABAAAAAAANAAsABAABAAAAAAAOAAoABAABAAAAAAAOAAsABAABAAAAAAAPAAoABAABAAAAAAAPAAsABAABAAAAAAAQAAoABAABAAAAAAAQAAsABAABAAAAAAARAAoABAABAAAAAAARAAsABAABAAAAAAASAAoABAABAAAAAAASAAsABAABAAAAAAATAAoABAABAAAAAAATAAsABAABAAAAAAA=")
+tile_set = ExtResource("2_0wfyh")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
