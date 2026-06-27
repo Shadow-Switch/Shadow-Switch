@@ -4,11 +4,34 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_w487p"]
 font = ExtResource("1_o5qli")
+font_size = 23
 
-[node name="Main" type="CanvasLayer" unique_id=1232225580]
+[node name="Main" type="Control" unique_id=27101671]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=66679813]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=978489061]
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.5
+offset_top = 44.635
+offset_right = 53.5
+offset_bottom = 63.635
+grow_horizontal = 2
 text = "Shadow Switch"
 label_settings = SubResource("LabelSettings_w487p")
