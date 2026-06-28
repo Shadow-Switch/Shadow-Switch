@@ -70,6 +70,7 @@ grow_vertical = 2
 theme = SubResource("Theme_2pgb6")
 theme_override_fonts/font = ExtResource("1_o5qli")
 shortcut = SubResource("Shortcut_tefeu")
+shortcut_in_tooltip = false
 text = "Play"
 
 [node name="Label" type="Label" parent="." unique_id=978489061]
