@@ -9,6 +9,18 @@
 
 [sub_resource type="Theme" id="Theme_2pgb6"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_tefeu"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="InputEventKey" id="InputEventKey_o6xl0"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_tefeu"]
+events = [SubResource("InputEventKey_tefeu"), SubResource("InputEventKey_o6xl0"), null]
+
 [sub_resource type="LabelSettings" id="LabelSettings_w487p"]
 font = ExtResource("1_o5qli")
 font_size = 23
@@ -57,6 +69,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_2pgb6")
 theme_override_fonts/font = ExtResource("1_o5qli")
+shortcut = SubResource("Shortcut_tefeu")
 text = "Play"
 
 [node name="Label" type="Label" parent="." unique_id=978489061]
