@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Shadow Switch"
-run/main_scene="uid://n78b0umtt64t"
+run/main_scene="uid://c8djemmwisqyv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/stretch_mode=0
@@ -30,7 +30,7 @@ Global="*uid://cplfyrsqmgf30"
 
 window/size/viewport_width=320
 window/size/viewport_height=180
-window/size/mode=3
+window/size/mode=4
 window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 
@@ -89,3 +89,4 @@ renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.7882353, 0.7882353, 0.7882353, 1)
 2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

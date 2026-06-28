@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://blus7j0gava6p"]
+
+[ext_resource type="Shader" uid="uid://b845dvo6jfryv" path="res://assets/others/vignette_shader_material.gdshader" id="1_bbwiu"]
+
+[resource]
+shader = ExtResource("1_bbwiu")
+shader_parameter/pixel_size = Vector2(320, 180)

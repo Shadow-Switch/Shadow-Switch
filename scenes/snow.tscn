@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://chxynbjl24wib"]
+
+[ext_resource type="Script" uid="uid://bixddyvlx76o3" path="res://scripts/snow.gd" id="1_n3rj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykkkh"]
+size = Vector2(1, 1)
+
+[node name="Snow" type="CharacterBody2D" unique_id=1311682497]
+script = ExtResource("1_n3rj0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1133576937]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ykkkh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1898632283]
+offset_right = 1.0
+offset_bottom = 1.0
