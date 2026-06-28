@@ -59,6 +59,9 @@ func _physics_process(delta):
 		if (left_collider and not "Spike" == left_collider.name) and (right_collider and not "Spike" == right_collider.name):
 			last_floor = snap_to_grid(global_position)
 
+	# 픽셀에 스냅
+	position = position.round()
+
 func snap_to_grid(pos: Vector2) -> Vector2:
 	return Vector2(
 		(floor(pos.x / 16) * 16) + 8,
