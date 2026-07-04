@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	load_level("res://scenes/levels/1.tscn")
+	load_level("res://scenes/levels/2.tscn")
 	$Player.dimension_changed.connect(apply_dimension)
 
 func _process(_delta):
@@ -16,6 +16,7 @@ func apply_dimension():
 		return
 	var real = Global.current_level.RealLayer
 	var shadow = Global.current_level.ShadowLayer
+	var music = Global.current_level.Music
 	if Global.dimension == 0:
 		real.visible = true
 		shadow.visible = false
@@ -24,7 +25,7 @@ func apply_dimension():
 		real.get_node("Spike").set_collision_enabled(true)
 		shadow.get_node("Spike").set_collision_enabled(false)
 		$CanvasLayer2/BackGroundColor.color = Color(0.79, 0.79, 0.79, 1.0)
-		$AudioStreamPlayer.bus = &"Master"
+		music.bus = &"Master"
 	else:
 		real.visible = false
 		shadow.visible = true
@@ -33,7 +34,7 @@ func apply_dimension():
 		real.get_node("Spike").set_collision_enabled(false)
 		shadow.get_node("Spike").set_collision_enabled(true)
 		$CanvasLayer2/BackGroundColor.color = Color(0.59, 0.59, 0.59, 1.0)
-		$AudioStreamPlayer.bus = &"Shadow"
+		music.bus = &"Shadow"
 
 func load_level(path):
 	# 레벨 씬 변경

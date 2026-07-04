@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c8cxqhy1eeb7j" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cpk6plcbaawl0" path="res://scenes/player.tscn" id="1_yqjtg"]
 [ext_resource type="Material" uid="uid://blus7j0gava6p" path="res://assets/others/vignette_shader_material.tres" id="4_iywne"]
-[ext_resource type="AudioStream" uid="uid://dssjsc5rph25v" path="res://assets/sounds/between_two_worlds.ogg" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=963134467]
 script = ExtResource("1_lnu2h")
@@ -33,9 +32,3 @@ layer = -1
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0.7882353, 0.7882353, 0.7882353, 1)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1648953139]
-stream = ExtResource("4_lbhrr")
-volume_db = -15.0
-autoplay = true
-parameters/looping = true

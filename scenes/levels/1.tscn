@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://sj7pjood1uay"]
 
-[ext_resource type="Script" uid="uid://dj874180y0ku1" path="res://scripts/level.gd" id="1_ie7v7"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_ie7v7"]
 [ext_resource type="TileSet" uid="uid://ca2vu0irk1js2" path="res://assets/others/tile_set.tres" id="2_le1x0"]
 [ext_resource type="SpriteFrames" uid="uid://c411j2mds4h5n" path="res://assets/others/exit_sprite_frames.tres" id="3_x3ltn"]
+[ext_resource type="AudioStream" uid="uid://dssjsc5rph25v" path="res://assets/sounds/between_two_worlds.ogg" id="4_f00r8"]
 
 [sub_resource type="GDScript" id="GDScript_x3ltn"]
 resource_name = "exit"
@@ -66,5 +67,11 @@ shape = SubResource("RectangleShape2D_f00r8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=997915311]
 sprite_frames = ExtResource("3_x3ltn")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=2060317086]
+stream = ExtResource("4_f00r8")
+volume_db = -15.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
