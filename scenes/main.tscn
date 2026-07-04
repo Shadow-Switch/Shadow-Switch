@@ -49,7 +49,7 @@ color = Color(0.7882353, 0.7882353, 0.7882353, 1)
 script = ExtResource("3_tbgi4")
 
 [node name="Timer" type="Timer" parent="SnowGenerator" unique_id=501301035]
-wait_time = 0.009999999999999998
+wait_time = 0.00999999999999999
 autostart = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1068689370]

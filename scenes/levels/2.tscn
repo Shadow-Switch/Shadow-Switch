@@ -21,7 +21,7 @@ func _on_body_entered(body):
 		return
 	if body.name == \"Player\":
 		check = 1
-		emit_signal(\"entered_exit\", \"res://scenes/levels/2.tscn\")
+		emit_signal(\"entered_exit\", \"res://scenes/levels/3.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f00r8"]
@@ -61,11 +61,9 @@ position = Vector2(1240, 632)
 script = SubResource("GDScript_x3ltn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1577774867]
-visible = false
 shape = SubResource("RectangleShape2D_f00r8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=997915311]
-visible = false
 sprite_frames = ExtResource("3_8jtne")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
