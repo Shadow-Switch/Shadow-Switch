@@ -18,8 +18,19 @@ offset_right = 320.0
 offset_bottom = 180.0
 
 [node name="VirtualJoystick" type="VirtualJoystick" parent="CanvasLayer" unique_id=1038499707]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+joystick_mode = 1
+joystick_size = 27.0
+tip_size = 9.0
+initial_offset_ratio = Vector2(0, 0)
 action_left = &"move_left"
 action_right = &"move_right"
 action_up = &"jump"
