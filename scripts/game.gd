@@ -2,14 +2,14 @@ extends Node2D
 
 
 func _ready():
-	load_level("res://scenes/levels/2.tscn")
+	load_level("res://scenes/levels/1.tscn")
 	$Player.dimension_changed.connect(apply_dimension)
 
 func _process(_delta):
 	if DisplayServer.is_touchscreen_available():
-		$CanvasLayer/VirtualJoystick.visible = true
+		$CanvasLayer/Control.visible = true
 	else:
-		$CanvasLayer/VirtualJoystick.visible = false
+		$CanvasLayer/Control.visible = false
 
 func apply_dimension():
 	if Global.current_level == null:
@@ -49,3 +49,14 @@ func load_level(path):
 	for exit in level.get_tree().get_nodes_in_group("exit"):
 		exit.connect("entered_exit", load_level)
 	apply_dimension()
+
+
+func _on_jump_button_down():
+	Input.action_press("jump")
+
+func _on_jump_button_up():
+	Input.action_release("jump")
+
+func _on_switch_button_down():
+	Input.action_press("switch_dimension")
+	Input.action_release("switch_dimension")

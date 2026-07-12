@@ -29,7 +29,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	# 이동
-	var direction := Input.get_axis("move_left", "move_right")
+	var direction = sign(Input.get_axis("move_left", "move_right"))
 	if direction:
 		velocity.x = direction * SPEED
 	else:

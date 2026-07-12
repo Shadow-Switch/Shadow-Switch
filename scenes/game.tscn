@@ -17,13 +17,48 @@ material = ExtResource("4_iywne")
 offset_right = 320.0
 offset_bottom = 180.0
 
-[node name="VirtualJoystick" type="VirtualJoystick" parent="CanvasLayer" unique_id=1038499707]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1804591593]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Joystick" type="VirtualJoystick" parent="CanvasLayer/Control" unique_id=1038499707]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = 50.000008
+offset_right = 887.9999
+offset_bottom = 499.99988
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+joystick_mode = 1
+initial_offset_ratio = Vector2(0.8, 0.7)
 action_left = &"move_left"
 action_right = &"move_right"
-action_up = &"jump"
-action_down = &"switch_dimension"
+action_up = &""
+action_down = &""
+
+[node name="Jump" type="Button" parent="CanvasLayer/Control" unique_id=1216275386]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 133.0
+offset_right = 65.0
+offset_bottom = 164.0
+text = "Jump"
+
+[node name="Switch" type="Button" parent="CanvasLayer/Control" unique_id=979909145]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 90.0
+offset_right = 75.0
+offset_bottom = 121.0
+text = "Switch"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2046220483]
 layer = -1
@@ -32,3 +67,7 @@ layer = -1
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0.7882353, 0.7882353, 0.7882353, 1)
+
+[connection signal="button_down" from="CanvasLayer/Control/Jump" to="." method="_on_jump_button_down"]
+[connection signal="button_up" from="CanvasLayer/Control/Jump" to="." method="_on_jump_button_up"]
+[connection signal="button_down" from="CanvasLayer/Control/Switch" to="." method="_on_switch_button_down"]
