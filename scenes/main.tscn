@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://ca2vu0irk1js2" path="res://assets/others/tile_set.tres" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://b8nqgnrtmhow5" path="res://scripts/snow_generator.gd" id="3_tbgi4"]
 [ext_resource type="Material" uid="uid://blus7j0gava6p" path="res://assets/others/vignette_shader_material.tres" id="4_jyhfs"]
-[ext_resource type="AudioStream" uid="uid://c7f5ueu6728iq" path="res://assets/sounds/shadow_of_snow.ogg" id="6_tefeu"]
+[ext_resource type="AudioStream" uid="uid://c7f5ueu6728iq" path="res://assets/sounds/musics/shadow_of_snow.ogg" id="6_tefeu"]
 
 [sub_resource type="Theme" id="Theme_2pgb6"]
 

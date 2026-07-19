@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dj874180y0ku1" path="res://scripts/level.gd" id="1_mx7cr"]
 [ext_resource type="TileSet" uid="uid://ca2vu0irk1js2" path="res://assets/others/tile_set.tres" id="2_afygv"]
 [ext_resource type="SpriteFrames" uid="uid://c411j2mds4h5n" path="res://assets/others/exit_sprite_frames.tres" id="3_8jtne"]
-[ext_resource type="AudioStream" uid="uid://c7f5ueu6728iq" path="res://assets/sounds/shadow_of_snow.ogg" id="4_afygv"]
+[ext_resource type="AudioStream" uid="uid://c7f5ueu6728iq" path="res://assets/sounds/musics/shadow_of_snow.ogg" id="4_afygv"]
 
 [sub_resource type="GDScript" id="GDScript_x3ltn"]
 resource_name = "exit"
