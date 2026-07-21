@@ -13,6 +13,7 @@ config_version=5
 config/name="Shadow Switch"
 run/main_scene="uid://c8djemmwisqyv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/stretch_mode=0
 boot_splash/image="uid://ng1nyvbiw1g6"
@@ -30,9 +31,24 @@ Global="*uid://cplfyrsqmgf30"
 
 window/size/viewport_width=320
 window/size/viewport_height=180
-window/size/mode=4
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "red",
+"res://assets/images/": "green",
+"res://assets/others/": "teal",
+"res://assets/sounds/": "blue",
+"res://assets/sounds/effects/": "purple",
+"res://assets/sounds/musics/": "pink",
+"res://scenes/": "orange",
+"res://scenes/levels/": "purple",
+"res://scripts/": "yellow"
+}
 
 [input]
 
