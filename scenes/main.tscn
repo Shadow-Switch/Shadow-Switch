@@ -1,10 +1,17 @@
 [gd_scene format=4 uid="uid://c8djemmwisqyv"]
 
+[ext_resource type="Script" uid="uid://gpy16i3e7bl5" path="res://scenes/main.gd" id="1_tefeu"]
 [ext_resource type="TileSet" uid="uid://ca2vu0irk1js2" path="res://assets/others/tile_set.tres" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://b8nqgnrtmhow5" path="res://scripts/snow_generator.gd" id="3_tbgi4"]
-[ext_resource type="Material" uid="uid://blus7j0gava6p" path="res://assets/others/vignette_shader_material.tres" id="4_jyhfs"]
 [ext_resource type="FontFile" uid="uid://b0exmavx4ca5w" path="res://assets/others/bm_kkubulim.otf" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dk1dkv0qu43t4" path="res://scenes/level_button.tscn" id="4_tefeu"]
 [ext_resource type="AudioStream" uid="uid://c7f5ueu6728iq" path="res://assets/sounds/musics/shadow_of_snow.ogg" id="6_tefeu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ykkkh"]
+font = ExtResource("4_tbgi4")
+font_size = 12
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.1882353)
 
 [sub_resource type="LabelSettings" id="LabelSettings_w487p"]
 font = ExtResource("4_tbgi4")
@@ -18,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tefeu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=984428101]
 stream = ExtResource("6_tefeu")
@@ -39,15 +47,16 @@ color = Color(0.7882353, 0.7882353, 0.7882353, 1)
 script = ExtResource("3_tbgi4")
 
 [node name="Timer" type="Timer" parent="SnowGenerator" unique_id=501301035]
-wait_time = 0.00999999999999999
+wait_time = 0.001
 autostart = true
 
 [node name="Terrian" type="TileMapLayer" parent="." unique_id=1753817944]
 z_index = 1
-tile_map_data = PackedByteArray("AAAAAAoABAAAAAAAAAAAAAsABAABAAAAAAABAAoABAAAAAAAAAABAAsABAABAAAAAAACAAgABAAAAAAAAAACAAkABAABAAAAAAACAAoABAABAAAAAAACAAsABAABAAAAAAADAAYABAAAAAAAAAADAAcABAABAAAAAAADAAgABAABAAAAAAADAAkABAABAAAAAAADAAoABAABAAAAAAADAAsABAABAAAAAAAEAAYABAAAAAAAAAAEAAcABAABAAAAAAAEAAgABAABAAAAAAAEAAkABAABAAAAAAAEAAoABAABAAAAAAAEAAsABAABAAAAAAAFAAQABAADAAAAAAAFAAgABAABAAAAAAAFAAkABAABAAAAAAAFAAoABAABAAAAAAAFAAsABAABAAAAAAAGAAQABAADAAAAAAAGAAgABAABAAAAAAAGAAkABQABAAAAAAAGAAoABAAAAAAAAAAGAAsABAABAAAAAAAHAAQABAAEAAAAAAAHAAgABAACAAAAAAAHAAkABAACAAAAAAAHAAoABAABAAAAAAAHAAsABAABAAAAAAAIAAQABAADAAAAAAAIAAgABAABAAAAAAAIAAkABAABAAAAAAAIAAoABAABAAAAAAAIAAsABAABAAAAAAAJAAgABAABAAAAAAAJAAkABAABAAAAAAAJAAoABAABAAAAAAAJAAsABAABAAAAAAAKAAQABQAAAAAAAAAKAAgABAABAAAAAAAKAAkABAAEAAAAAAAKAAoABAAAAAAAAAAKAAsABAABAAAAAAALAAQABQADAAAAAAALAAkABAADAAAAAAALAAoABAAAAAAAAAALAAsABAABAAAAAAAMAAkABAADAAAAAAAMAAoABAAAAAAAAAAMAAsABAABAAAAAAANAAkABAADAAAAAAANAAoABAAAAAAAAAANAAsABAABAAAAAAAOAAkABAADAAAAAAAOAAoABAAAAAAAAAAOAAsABAABAAAAAAAPAAkABAADAAAAAAAPAAoABAAAAAAAAAAPAAsABAABAAAAAAAQAAoABAAAAAAAAAAQAAsABAABAAAAAAARAAkABAADAAAAAAARAAoABAAAAAAAAAARAAsABAABAAAAAAASAAoABAAAAAAAAAASAAsABAABAAAAAAATAAoABAAAAAAAAAATAAsABAABAAAAAAATAAEABAAAAAAAAAASAAEABAAAAAAAAAARAAEABAAAAAAAAAATAAAABQABAAAAAAASAAAABQACAAAAAAARAAAABQAAAAAAAAAPAAYABAAAAAAAAAAPAAcABQACAAEAAAAAAAkABAAGAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAoABAAAAAAAAAAAAAsABAABAAAAAAABAAoABAAAAAAAAAABAAsABAABAAAAAAACAAgABAAAAAAAAAACAAkABAABAAAAAAACAAoABAABAAAAAAACAAsABAABAAAAAAADAAYABAAAAAAAAAADAAcABAABAAAAAAADAAgABAABAAAAAAADAAkABAABAAAAAAADAAoABAABAAAAAAADAAsABAABAAAAAAAEAAYABAAAAAAAAAAEAAcABAABAAAAAAAEAAgABAABAAAAAAAEAAkABAABAAAAAAAEAAoABAABAAAAAAAEAAsABAABAAAAAAAFAAgABAABAAAAAAAFAAkABAABAAAAAAAFAAoABAABAAAAAAAFAAsABAABAAAAAAAGAAgABAABAAAAAAAGAAkABQABAAAAAAAGAAoABAAAAAAAAAAGAAsABAABAAAAAAAHAAkABAACAAAAAAAHAAoABAABAAAAAAAHAAsABAABAAAAAAAIAAgABAACAAAAAAAIAAkABAACAAAAAAAIAAoABAABAAAAAAAIAAsABAABAAAAAAAJAAgABAABAAAAAAAJAAkABAABAAAAAAAJAAoABAABAAAAAAAJAAsABAABAAAAAAAKAAQABQAAAAAAAAAKAAgABAABAAAAAAAKAAkABAAEAAAAAAAKAAoABAAAAAAAAAAKAAsABAABAAAAAAALAAQABQADAAAAAAALAAkABAADAAAAAAALAAoABAAAAAAAAAALAAsABAABAAAAAAAMAAkABAADAAAAAAAMAAoABAAAAAAAAAAMAAsABAABAAAAAAANAAkABAADAAAAAAANAAoABAAAAAAAAAANAAsABAABAAAAAAAOAAkABAADAAAAAAAOAAoABAAAAAAAAAAOAAsABAABAAAAAAAPAAkABAADAAAAAAAPAAoABAAAAAAAAAAPAAsABAABAAAAAAAQAAoABAAAAAAAAAAQAAsABAABAAAAAAARAAkABAADAAAAAAARAAoABAAAAAAAAAARAAsABAABAAAAAAASAAoABAAAAAAAAAASAAsABAABAAAAAAATAAoABAAAAAAAAAATAAsABAABAAAAAAATAAEABAAAAAAAAAASAAEABAAAAAAAAAARAAEABAAAAAAAAAATAAAABQABAAAAAAASAAAABQACAAAAAAARAAAABQAAAAAAAAAAAAkABAAGAAAAAAAFAAcABAABAAAAAAAGAAcABAABAAAAAAAIAAcABAACAAAAAAAJAAcABAACAAAAAAAKAAcABAACAAAAAAALAAcABAABAAAAAAAHAAgABAABAAAAAAAHAAcABAABAAAAAAAMAAcABAABAAAAAAAGAAQABAADAAAAAAAFAAQABAADAAAAAAAHAAQABAAEAAAAAAAPAAUABAAAAAAAAAAPAAYABQACAAEAAAANAAcABQACAAEAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAEAAAABAAIAAAABAAEAAAACAAIAAAABAAEAAAADAAIAAAABAAEAAAAEAAIAAAACAAEAAAAEAAEAAAAAAAMAAAAFAAEAAAACAAIAAAAFAAAAAAACAAAAAAAEAAAAAAABAAAAAAACAAEAAAABAAAAAAABAAEAAAABAAAAAAADAAEAAAABAAQAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAEAAAAJAAIAAAAAAAIAAAAKAAIAAAABAAIAAAALAAIAAAABAAIAAAAMAAIAAAACAAIAAAAMAAEAAAACAAAAAAALAAEAAAAAAAQAAAALAAAAAAACAAAAAAAKAAAAAAABAAAAAAAKAAEAAAABAAEAAAADAAAAAAAAAAAAAAABAAMAAAABAAEAAAAAAAMAAAAAAAEAAAACAAMAAAABAAEAAAABAAQAAAABAAIAAAAAAAQAAAAAAAIAAAADAAMAAAAAAAMAAAADAAQAAAACAAIAAAACAAQAAAABAAIAAAAEAAMAAAACAAIAAAA=")
 tile_set = ExtResource("2_0wfyh")
 
 [node name="Hilight" type="ColorRect" parent="." unique_id=1263346828]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -59,17 +68,320 @@ color = Color(1, 1, 1, 0.19607843)
 
 [node name="Levels" type="TileMapLayer" parent="." unique_id=1117193530]
 z_index = 1
-tile_map_data = PackedByteArray("AAAFAAUABAAAAAAAAAAFAAYABAABAAAAAAAFAAcABAABAAAAAAAGAAUABAAAAAAAAAAGAAYABAABAAAAAAAGAAcABAABAAAAAAAHAAUABAAAAAAAAAAHAAYABAACAAAAAAAIAAUABAAAAAAAAAAIAAYABAACAAAAAAAIAAcABAABAAAAAAAJAAUABAAAAAAAAAAJAAYABAACAAAAAAAJAAcABAABAAAAAAAKAAUABAAAAAAAAAAKAAYABAACAAAAAAAKAAcABAABAAAAAAALAAYABAACAAAAAAALAAcABAABAAAAAAAMAAUABAAAAAAAAAAMAAYABAABAAAAAAAMAAcABAABAAAAAAANAAcABAABAAAAAAAOAAcABQACAAEAAAAHAAcABAACAAAAAAAOAAYABAAAAAAAAAALAAUABAACAAAAAAANAAYABAAAAAAAAAAOAAUABAAEAAAAAAANAAUABAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAFAAUABAAAAAAAAAAFAAYABAABAAAAAAAGAAUABAAAAAAAAAAGAAYABAABAAAAAAAHAAUABAAAAAAAAAAHAAYABAABAAAAAAAIAAYABAAAAAAAAAAJAAYABAAAAAAAAAAKAAUABAAAAAAAAAAKAAYABAACAAAAAAALAAYABAACAAAAAAAMAAYABAABAAAAAAALAAUABAACAAAAAAANAAYABAABAAAAAAAOAAUABAAAAAAAAAAOAAYABQACAAEAAAAMAAUABAAAAAAAAAAIAAUABAADAAAAAAAJAAUABAAEAAAAAAANAAUABQAAAAAAAAA=")
 tile_set = ExtResource("2_0wfyh")
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=1167141971]
+[node name="Labels" type="Control" parent="." unique_id=1724521819]
+z_index = 1
+anchors_preset = 0
+anchor_left = 0.25
+anchor_top = 0.44444445
+anchor_right = 0.75
+anchor_bottom = 0.62222224
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Label" parent="Labels" unique_id=250733659]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 16.0
+offset_bottom = 16.0
+text = "1"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="Labels" unique_id=1236266016]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 32.0
+offset_bottom = 15.0
+text = "2"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="Labels" unique_id=538059592]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 48.0
+offset_bottom = 15.0
+text = "3"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="Labels" unique_id=1944037519]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 64.0
+offset_bottom = 15.0
+text = "4"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="5" type="Label" parent="Labels" unique_id=477469846]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 80.0
+offset_bottom = 15.0
+text = "5"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="6" type="Label" parent="Labels" unique_id=243295199]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 96.0
+offset_bottom = 15.0
+text = "6"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="7" type="Label" parent="Labels" unique_id=768767344]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 112.0
+offset_bottom = 15.0
+text = "7"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="8" type="Label" parent="Labels" unique_id=323303111]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 128.0
+offset_bottom = 15.0
+text = "8"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="9" type="Label" parent="Labels" unique_id=1612426083]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 144.0
+offset_bottom = 15.0
+text = "9"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="10" type="Label" parent="Labels" unique_id=2131173324]
+layout_mode = 0
+offset_left = 144.0
+offset_right = 160.0
+offset_bottom = 15.0
+text = "10"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="11" type="Label" parent="Labels" unique_id=273344525]
+layout_mode = 0
+offset_top = 15.0
+offset_right = 16.0
+offset_bottom = 31.0
+text = "11"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="12" type="Label" parent="Labels" unique_id=313161542]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = 32.0
+offset_bottom = 31.0
+text = "12"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="13" type="Label" parent="Labels" unique_id=1820409784]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 15.0
+offset_right = 48.0
+offset_bottom = 31.0
+text = "13"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="14" type="Label" parent="Labels" unique_id=1331236352]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 15.0
+offset_right = 64.0
+offset_bottom = 31.0
+text = "14"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="15" type="Label" parent="Labels" unique_id=2037372223]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 15.0
+offset_right = 80.0
+offset_bottom = 31.0
+text = "15"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="16" type="Label" parent="Labels" unique_id=78762835]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 15.0
+offset_right = 96.0
+offset_bottom = 31.0
+text = "16"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="17" type="Label" parent="Labels" unique_id=236368738]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 15.0
+offset_right = 112.0
+offset_bottom = 31.0
+text = "17"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="18" type="Label" parent="Labels" unique_id=750765874]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 15.0
+offset_right = 128.0
+offset_bottom = 31.0
+text = "18"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="19" type="Label" parent="Labels" unique_id=31493826]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 15.0
+offset_right = 144.0
+offset_bottom = 31.0
+text = "19"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="20" type="Label" parent="Labels" unique_id=1357581499]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 15.0
+offset_right = 160.0
+offset_bottom = 31.0
+text = "20"
+label_settings = SubResource("LabelSettings_ykkkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1167141971]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.44400004
+anchor_right = 0.75000006
+anchor_bottom = 0.711
+offset_top = 0.0799942
+offset_right = -1.5258789e-05
+offset_bottom = 0.019996643
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 columns = 10
 
-[node name="TextureButton" type="TextureButton" parent="GridContainer" unique_id=2064187995]
+[node name="1" parent="GridContainer" unique_id=366440434 instance=ExtResource("4_tefeu")]
 layout_mode = 2
+metadata/target_level = "1"
+
+[node name="2" parent="GridContainer" unique_id=1554311229 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "2"
+
+[node name="3" parent="GridContainer" unique_id=120378262 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "3"
+
+[node name="4" parent="GridContainer" unique_id=376859679 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "4"
+
+[node name="5" parent="GridContainer" unique_id=1362293230 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "5"
+
+[node name="6" parent="GridContainer" unique_id=404144409 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "6"
+
+[node name="7" parent="GridContainer" unique_id=986490739 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "7"
+
+[node name="8" parent="GridContainer" unique_id=276909347 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "8"
+
+[node name="9" parent="GridContainer" unique_id=424366042 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "9"
+
+[node name="10" parent="GridContainer" unique_id=80806022 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "10"
+
+[node name="11" parent="GridContainer" unique_id=55087866 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "11"
+
+[node name="12" parent="GridContainer" unique_id=1650809907 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "12"
+
+[node name="13" parent="GridContainer" unique_id=303756593 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "13"
+
+[node name="14" parent="GridContainer" unique_id=970634983 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "14"
+
+[node name="15" parent="GridContainer" unique_id=408378459 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "15"
+
+[node name="16" parent="GridContainer" unique_id=290580025 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "16"
+
+[node name="17" parent="GridContainer" unique_id=1338207818 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "17"
+
+[node name="18" parent="GridContainer" unique_id=2042174015 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "18"
+
+[node name="19" parent="GridContainer" unique_id=117040611 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "19"
+
+[node name="20" parent="GridContainer" unique_id=2125274930 instance=ExtResource("4_tefeu")]
+layout_mode = 2
+metadata/target_level = "20"
 
 [node name="Title" type="Label" parent="." unique_id=978489061]
 z_index = 1
@@ -77,21 +389,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -93.5
+offset_left = -96.0
 offset_top = 16.0
-offset_right = 93.5
+offset_right = 96.0
 offset_bottom = 49.0
 grow_horizontal = 2
 text = "Shadow Switch"
 label_settings = SubResource("LabelSettings_w487p")
-
-[node name="Vignette" type="ColorRect" parent="." unique_id=308178033]
-z_index = 1
-material = ExtResource("4_jyhfs")
-layout_mode = 0
-offset_right = 320.0
-offset_bottom = 180.0
-mouse_filter = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Window" type="Window" parent="." unique_id=345134407]
 oversampling_override = 1.0

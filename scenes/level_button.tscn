@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dk1dkv0qu43t4"]
+
+[ext_resource type="Script" uid="uid://dl10tqmv37agw" path="res://select_button.gd" id="1_i0sit"]
+[ext_resource type="Texture2D" uid="uid://cy5k248pdap8w" path="res://assets/images/level_button.png" id="1_o8246"]
+
+[node name="LevelButton" type="TextureButton" unique_id=366440434]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_o8246")
+texture_pressed = ExtResource("1_o8246")
+texture_hover = ExtResource("1_o8246")
+texture_disabled = ExtResource("1_o8246")
+texture_focused = ExtResource("1_o8246")
+script = ExtResource("1_i0sit")
+metadata/target_level = ""
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
