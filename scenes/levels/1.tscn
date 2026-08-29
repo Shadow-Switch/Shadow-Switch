@@ -35,20 +35,12 @@ tile_set = ExtResource("2_le1x0")
 tile_map_data = PackedByteArray("AAABAP3/AQAAAAAAAAAAAP7/AQABAAAAAAABAP7/AQACAAAAAAACAP7/AQADAAAAAAAMAAAABQADAAAAAAA=")
 tile_set = ExtResource("2_le1x0")
 
-[node name="Exit" type="Area2D" parent="." unique_id=1158923463]
+[node name="Exit" parent="." unique_id=532802204 instance=ExtResource("3_f00r8")]
 position = Vector2(2504, -56)
-script = SubResource("GDScript_x3ltn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1577774867]
-shape = SubResource("RectangleShape2D_f00r8")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Exit" unique_id=997915311]
-sprite_frames = ExtResource("3_x3ltn")
+metadata/target_level = "2"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=2060317086]
 stream = ExtResource("4_f00r8")
 volume_db = -15.0
 autoplay = true
 parameters/looping = true
-
-[connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
