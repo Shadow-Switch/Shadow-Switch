@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	load_level("res://scenes/levels/1.tscn")
+	load_level("res://scenes/levels/3.tscn")
 	$Player.dimension_changed.connect(apply_dimension)
 
 func _process(_delta):

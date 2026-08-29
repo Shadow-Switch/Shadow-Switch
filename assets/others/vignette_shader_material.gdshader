@@ -8,5 +8,5 @@ void fragment() {
 	float dist = distance(pixel_uv, vec2(0.5));
 	float vignette = smoothstep(0.3, 0.8, dist);
 	
-	COLOR = vec4(0.0, 0.0, 0.0, vignette * 0.5);
+	COLOR = vec4(0.0, 0.0, 0.0, vignette * 0.3);
 }
