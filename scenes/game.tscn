@@ -3,17 +3,21 @@
 [ext_resource type="Script" uid="uid://c8cxqhy1eeb7j" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cpk6plcbaawl0" path="res://scenes/player.tscn" id="1_yqjtg"]
 [ext_resource type="Material" uid="uid://blus7j0gava6p" path="res://assets/others/vignette_shader_material.tres" id="4_iywne"]
+[ext_resource type="Script" uid="uid://bifwdtywad7im" path="res://scenes/pause_menu.gd" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=963134467]
 script = ExtResource("1_lnu2h")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2046220483]
+[node name="BackGroundColor" type="CanvasLayer" parent="." unique_id=2046220483]
 layer = -1
 
-[node name="BackGroundColor" type="ColorRect" parent="CanvasLayer2" unique_id=1692858609]
+[node name="ColorRect" type="ColorRect" parent="BackGroundColor" unique_id=1692858609]
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0.7882353, 0.7882353, 0.7882353, 1)
+
+[node name="Player" parent="." unique_id=523157469 instance=ExtResource("1_yqjtg")]
+position = Vector2(8, 8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1884144013]
 
@@ -66,9 +70,55 @@ material = ExtResource("4_iywne")
 offset_right = 320.0
 offset_bottom = 180.0
 
-[node name="Player" parent="." unique_id=523157469 instance=ExtResource("1_yqjtg")]
-position = Vector2(8, 8)
+[node name="PauseMenu" type="Control" parent="CanvasLayer" unique_id=1405064570]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_lbhrr")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PauseMenu" unique_id=1893959220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu" unique_id=1890018815]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -50.5
+offset_right = 48.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=1690138630]
+layout_mode = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=1024242249]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer" unique_id=840227698]
+layout_mode = 2
+text = "Quit"
 
 [connection signal="button_down" from="CanvasLayer/Control/Jump" to="." method="_on_jump_button_down"]
 [connection signal="button_up" from="CanvasLayer/Control/Jump" to="." method="_on_jump_button_up"]
 [connection signal="button_down" from="CanvasLayer/Control/Switch" to="." method="_on_switch_button_down"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Resume" to="CanvasLayer/PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Restart" to="CanvasLayer/PauseMenu" method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Quit" to="CanvasLayer/PauseMenu" method="_on_quit_pressed"]

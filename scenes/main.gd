@@ -8,3 +8,7 @@ func _process(_delta):
 	else:
 		$Labels.visible = false
 		$Hilight.visible = false
+
+func _input(event):
+	if event.is_action_pressed("pause"):
+		get_tree().quit()
