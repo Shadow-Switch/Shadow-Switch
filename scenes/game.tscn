@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c8cxqhy1eeb7j" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cpk6plcbaawl0" path="res://scenes/player.tscn" id="1_yqjtg"]
 [ext_resource type="Material" uid="uid://blus7j0gava6p" path="res://assets/others/vignette_shader_material.tres" id="4_iywne"]
-[ext_resource type="Script" uid="uid://bifwdtywad7im" path="res://scenes/pause_menu.gd" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://bifwdtywad7im" path="res://scripts/pause_menu.gd" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=963134467]
 script = ExtResource("1_lnu2h")

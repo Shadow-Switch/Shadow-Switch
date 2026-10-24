@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dk1dkv0qu43t4"]
 
-[ext_resource type="Script" uid="uid://dl10tqmv37agw" path="res://select_button.gd" id="1_i0sit"]
+[ext_resource type="Script" uid="uid://dl10tqmv37agw" path="res://scripts/select_button.gd" id="1_i0sit"]
 [ext_resource type="Texture2D" uid="uid://cy5k248pdap8w" path="res://assets/images/level_button.png" id="1_o8246"]
 
 [node name="LevelButton" type="TextureButton" unique_id=366440434]

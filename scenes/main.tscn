@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c8djemmwisqyv"]
 
-[ext_resource type="Script" uid="uid://gpy16i3e7bl5" path="res://scenes/main.gd" id="1_tefeu"]
+[ext_resource type="Script" uid="uid://gpy16i3e7bl5" path="res://scripts/main.gd" id="1_tefeu"]
 [ext_resource type="TileSet" uid="uid://ca2vu0irk1js2" path="res://assets/others/tile_set.tres" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://b8nqgnrtmhow5" path="res://scripts/snow_generator.gd" id="3_tbgi4"]
 [ext_resource type="FontFile" uid="uid://b0exmavx4ca5w" path="res://assets/others/bm_kkubulim.otf" id="4_tbgi4"]
